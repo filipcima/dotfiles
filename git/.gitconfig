@@ -1,0 +1,217 @@
+[core]
+	attributesfile = ~/.gitattributes
+	autocrlf = input
+	compression = -1
+	editor = vim
+	excludesfile = ~/.gitignore
+	precomposeunicode = true
+	whitespace = trailing-space,space-before-tab
+
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
+[push]
+	default = current
+
+[branch]
+	autoSetupMerge = always
+
+[apply]
+	whitespace = nowarn
+
+[help]
+	autocorrect = 1
+
+[merge]
+	tool = vscode
+
+[diff]
+	tool = vscode
+
+[grep]
+	extendRegexp = true
+	lineNumber = true
+
+[submodule]
+	fetchJobs = 4
+
+[log]
+	showSignature = false
+
+[credential]
+	helper = osxkeychain
+
+[mergetool "vscode"]
+	cmd = "code --wait "
+
+# Colors
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
+# URL shorthands
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/" # From GIT to SSH
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/" # From GIT to SSH
+
+# Add LFS commands
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+# Aliases
+[alias]
+	# Commit all changes
+	ca = !git add -A && git commit -av
+	m = !git add -A && git commit -m
+	# Amend the currently staged files to the latest commit
+	amend = commit --amend --reuse-message=HEAD
+	# Ammend last commit with its original message
+	redo = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+	# Initialize, add all files and commit
+	this = !git init && git add . && git commit -m 'Initial commit'
+
+
+	# Reset everything
+	nuke = !git clean -df && git reset --hard
+	# Reset index changes, but not the working tree
+	undo = reset --mixed HEAD^
+	# Reset index changes, but not the working tree
+	rs = reset --soft
+	# Reset index changes, but not the working tree
+	rh = reset --hard
+	# Checkout to HEAD revision
+	discard = checkout --
+
+	
+	# Stash
+	st = stash push -m 
+	sta = stash apply
+	stc = stash clear
+	std = stash drop
+	stl = stash list
+	sts = stash show --text
+	stp = stash pop
+
+
+	# Commits log with pretty format
+	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	# Fully commits log with statistic
+	ll = log --decorate --color --stat --abbrev-commit -n 20
+	# View the current working tree status using the short format
+	s = !"git-st"
+	# Show the diff between the latest commit and the current state
+	d = !"git diff --color --color-words --abbrev || clear; git --no-pager diff --patch-with-stat"
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+
+	master = !git checkout master && git pull --prune
+	dev = !git checkout dev && git pull --prune
+	test = !git checkout test && git pull --prune
+
+	# When doing "git git log" or some such, do not complain about "git"
+	git = !git
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+
+	# General shorthands
+	a = add .
+	aa = add --all
+	b = branch
+	bd = branch -d
+	bD = branch -D
+	p = push -u
+	f = fetch --all --set-upstream
+	i = !git fetch --all && git pull
+	c = checkout
+	cb = checkout -b
+
+
+	# Pull in remote changes for the current repository and all its submodules
+	pu = !"git pull; git submodule foreach git pull origin master"
+	# Clone a repository including all submodules
+	cl = clone --recursive
+
+
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	# Remove the old tag with this name and tag the latest commit with it.
+	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
+
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad	%Creset%s%Cgreen	[%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad	%Creset%s%Cgreen	[%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# Remove branches that have already been merged with master
+	# a.k.a. ‘delete merged’
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+	# List contributors with number of commits
+	contributors = shortlog --summary --numbered
+
+	# Ignore files: append file to .ginignore
+	ignore = !([ ! -e .gitignore ] && touch .gitignore) | echo `\n$2` >> .gitignore
+
+	# See how many lines of code you have written today.
+	today = diff --shortstat "@{0 day ago}"
+
+	# How many lines in repo
+	stat = !git ls-files | xargs wc -l
+
+	# Show all aliases
+	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+
+# Load local config with user
+[include]
+    path = ~/.gitconfig.local
+
+# Load specific configs for these directories
+[includeIf "gitdir:~/Projects/"]
+	path = ~/.gitconfig.projects
+
+[includeIf "gitdir:~/Workspace/"]
+	path = ~/.gitconfig.workspace
