@@ -42,7 +42,7 @@ finish() {
 
 # Configs
 export DOTFILES=${1:-"$HOME/.dotfiles"}
-GITHUB_REPO_URL_BASE="https://github.com/jsimck/dotfiles.git"
+GITHUB_REPO_URL_BASE="https://github.com/jsimck/dotfiles"
 HOMEBREW_INSTALLER_URL="https://raw.githubusercontent.com/Homebrew/install/master/install"
 
 on_start() {
