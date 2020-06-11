@@ -94,14 +94,8 @@ cask 'qlstephen'
 cask 'qlvideo'
 
 # Fonts
-cask 'font-montserrat'
-cask 'font-montserrat'
 cask 'font-cascadia-pl'
 cask 'font-cascadia-mono-pl'
-cask 'font-lato'
-cask 'font-open-sans'
-cask 'font-roboto'
-cask 'font-roboto-condensed'
 
 # Mac App Store
 mas 'Keynote', id: 409183694
