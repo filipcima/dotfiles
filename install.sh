@@ -169,7 +169,8 @@ install_dotfiles() {
   else
     success "You already have dotfiles installed. Skipping..."
   fi
-
+  
+  cd ~/.dotfiles
   finish
 }
 
