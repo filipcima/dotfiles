@@ -6,4 +6,6 @@ echo "Installing mackup custom sync configs..."
 ln -sf ~/.dotfiles/.mackup.cfg ~/.mackup.cfg
 
 # Symlink custom configs dir
-ln -sf ~/.dotfiles/mackup ~/.mackup
+rm -rf ~/.dotfiles/mackup/mackup
+rm -rf ~/.mackup
+ln -s ~/.dotfiles/mackup ~/.mackup

@@ -52,9 +52,7 @@ update_dotfiles() {
   info "Updating dotfiles..."
 
   cd $DOTFILES
-  git fetch --all
-  git pull origin master
-  cd - > /dev/null 2>&1
+  git pull --rebase origin master
 
   info "Updating zplug packages..."
 
@@ -64,10 +62,11 @@ update_dotfiles() {
   zplug clear
   # Update installed packages in parallel
   zplug update
+  zplug install
 
-  info "Running installers..."
-  # Run installers
-  for file in $DOTFILES/*/install.sh
+  info "Running updaters..."
+  # Run updaters
+  for file in $DOTFILES/*/update.sh
     do
     bash "$file"
   done
@@ -117,6 +116,9 @@ update_npm() {
 
   # Update packages with npm-check-updates
   if _exists npx; then
+    npx ncu -g
+  else
+    npm install ncu -g
     npx ncu -g
   fi
 
