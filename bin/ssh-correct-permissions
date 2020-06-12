@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# https://gist.github.com/grenade/6318301#file-ssh-key-permissions-sh
+# Correts SSH key permissions
+
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub

@@ -207,11 +207,11 @@
 
 # Load local config with user
 [include]
-    path = .gitconfig.local
+    path = ~/.local/.gitconfig.local
 
 # Load specific configs for these directories
 [includeIf "gitdir:~/Projects/"]
-	path = .gitconfig.projects
+	path = ~/.local/.gitconfig.projects
 
 [includeIf "gitdir:~/Workspace/"]
-	path = .gitconfig.workspace
+	path = ~/.local/.gitconfig.workspace

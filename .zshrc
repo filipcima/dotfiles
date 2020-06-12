@@ -19,6 +19,7 @@ _extend_path() {
 
 # Extend Path
 [[ -d "$HOME/.bin" ]] && _extend_path "$(brew --prefix coreutils)/libexec/gnubin"
+[[ -d "$HOME/.local" ]] && _extend_path ~/.local/bin
 [[ -d "$DOTFILES/bin" ]] && _extend_path ~/.dotfiles/bin
 
 # Defaults
