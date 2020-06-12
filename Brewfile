@@ -87,6 +87,7 @@ cask 'tunnelblick'
 cask 'prusaslicer'
 cask 'mattermost'
 cask 'logitech-options'
+cask 'autodesk-fusion360'
 
 # Quicklook
 cask 'syntax-highlight'
