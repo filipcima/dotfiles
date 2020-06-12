@@ -52,6 +52,7 @@ update_dotfiles() {
   info "Updating dotfiles..."
 
   cd $DOTFILES
+  git fetch --all
   git pull origin master
   cd - > /dev/null 2>&1
 
