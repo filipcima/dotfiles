@@ -3,6 +3,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'homebrew/cask-drivers'
 
 # Starship prompt and zsh
 brew 'starship'
@@ -79,11 +80,13 @@ cask 'spotify'
 cask 'visual-studio-code'
 cask 'bettertouchtool'
 cask 'appcleaner'
-cask 'dash'
+cask 'dash4'
 cask 'dropbox'
 cask 'steam'
 cask 'tunnelblick'
 cask 'prusaslicer'
+cask 'mattermost'
+cask 'logitech-options'
 
 # Quicklook
 cask 'syntax-highlight'
