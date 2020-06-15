@@ -33,6 +33,8 @@ alias la='exa --all --long --header --git'
 alias t='tail -f'
 
 # Command line head / tail shortcuts
+alias -g JQ='| jq'
+alias -g JSON='| jq'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g G='| rg -p'

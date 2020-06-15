@@ -50,6 +50,7 @@ brew 'gawk'
 brew 'jump'
 brew 'tmux'
 brew 'reattach-to-user-namespace'
+brew 'jq'
 
 # Media
 brew 'jpegoptim'
