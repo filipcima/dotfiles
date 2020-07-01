@@ -30,3 +30,7 @@ update
 ```
 
 This command will update dotfiles, their dependencies, `brew` packages, global `npm` dependencies, `gem`s, `apm` plugins.
+
+## References
+ - [https://github.com/driesvints/dotfiles](https://github.com/driesvints/dotfiles)
+ - [https://github.com/denysdovhan/dotfiles](https://github.com/denysdovhan/dotfiles)
