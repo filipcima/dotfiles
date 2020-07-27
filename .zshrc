@@ -140,3 +140,9 @@ eval "$(jump shell)"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 ENHANCD_DISABLE_HOME='1'
 ENHANCD_DISABLE_DOT='1'
+
+# ------------------------------------------------------------------------------
+#                            Environment
+# ------------------------------------------------------------------------------
+
+export NODE_TLS_REJECT_UNAUTHORIZED='0'

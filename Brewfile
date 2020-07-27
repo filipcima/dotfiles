@@ -4,6 +4,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
+tap 'mongodb/brew'
 
 # Starship prompt and zsh
 brew 'starship'
@@ -11,6 +12,7 @@ brew 'zplug'
 brew 'zsh'
 
 # Binaries
+brew 'mongodb-community'
 brew 'bash' # Latest Bash version
 brew 'bat' # "cat" on steroids
 brew 'coreutils' # Those that come with macOS are outdated
