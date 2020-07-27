@@ -83,8 +83,8 @@ update_brew() {
 
   brew update
   brew upgrade
-  brew bundle --file=$DOTFILES/Brewfile
-  brew bundle cleanup
+  brew bundle --global
+  brew bundle --global cleanup
   brew cleanup
 
   finish

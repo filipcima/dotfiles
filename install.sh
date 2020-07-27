@@ -187,7 +187,8 @@ bootstrap() {
   
   # Install all our dependencies with bundle (See Brewfile)
   brew tap homebrew/bundle
-  brew bundle || error "Some dependencies may have not installed correctly, but we will continue anyway..."
+  ln -sf $HOME/.dotfiles/Brewfile $HOME/.BrewFile
+  brew bundle --global || error "Some dependencies may have not installed correctly, but we will continue anyway..."
   
   echo "Creating Projects and Workspace directories..."
 
