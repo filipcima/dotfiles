@@ -107,7 +107,6 @@ zplug "hlissner/zsh-autopair", defer:2
 zplug "rauchg/wifi-password", as:command, use:"wifi-password.sh", rename-to:"wifi-password", lazy:true
 
 # Nvm
-export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
 zplug "lukechilds/zsh-nvm"
 zplug "lukechilds/zsh-better-npm-completion", defer:2
