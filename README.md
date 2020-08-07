@@ -5,13 +5,13 @@ Dotfiles are installed by running one of the following commands in your terminal
 **via `curl`**
 
 ```sh
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/jsimck/dotfiles/master/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/filipcima/dotfiles/master/install.sh)"
 ```
 
 **via `wget`**
 
 ```sh
-bash -c "$(wget https://raw.githubusercontent.com/jsimck/dotfiles/master/install.sh -O -)"
+bash -c "$(wget https://raw.githubusercontent.com/filipcima/dotfiles/master/install.sh -O -)"
 ```
 
 Tell Git who you are using these commands:
