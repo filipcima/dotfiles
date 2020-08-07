@@ -218,3 +218,6 @@
 
 [includeIf "gitdir:~/Workspace/"]
 	path = ~/.local/.gitconfig.workspace
+[user]
+	email = filip.cima@firma.seznam.cz
+	name = Filip Cima
