@@ -91,11 +91,7 @@ cask 'tunnelblick'
 cask 'prusaslicer'
 cask 'mattermost'
 cask 'autodesk-fusion360'
-<<<<<<< HEAD
 cask 'postman'
-=======
-cask 'insomnia'
->>>>>>> 0348d1c264ab66e6e086ce6ec9d974fab5306562
 
 # Quicklook
 cask 'syntax-highlight'
