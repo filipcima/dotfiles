@@ -62,6 +62,7 @@ brew 'svgo'
 brew 'ffmpeg'
 
 # Development
+brew 'k9s'
 brew 'kubectl'
 brew 'kubectx'
 brew 'yarn'
@@ -91,6 +92,7 @@ cask 'prusaslicer'
 cask 'mattermost'
 cask 'logitech-options'
 cask 'autodesk-fusion360'
+cask 'insomnia'
 
 # Quicklook
 cask 'syntax-highlight'
