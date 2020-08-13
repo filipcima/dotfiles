@@ -30,6 +30,7 @@ brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'gzip'
+brew 'k9s'
 brew 'watchman'
 brew 'wget'
 brew 'make'
